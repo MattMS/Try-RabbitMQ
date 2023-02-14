@@ -1,0 +1,8 @@
+.fable
+.fake
+.ionide
+bin
+obj
+*.env
+*.html
+*.js

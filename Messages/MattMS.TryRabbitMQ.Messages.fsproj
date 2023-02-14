@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="Messages.fs" />
+	</ItemGroup>
+</Project>

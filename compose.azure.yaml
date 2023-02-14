@@ -1,0 +1,32 @@
+services:
+  rabbitmq:
+    env_file:
+      - "RabbitMQ.secrets.env"
+    image: "${DOCKER_REGISTRY}/rabbitmq:3.11.9-management-alpine"
+  server:
+    build:
+      context: "."
+      dockerfile: "Server.Dockerfile"
+    container_name: "server"
+    depends_on:
+      - "rabbitmq"
+    env_file:
+      - "Server.secrets.env"
+    environment:
+      RabbitMQ__Host: "rabbitmq"
+    image: "${DOCKER_REGISTRY}/mattms.tryrabbitmq.server"
+    ports:
+      - "80:80"
+  worker:
+    build:
+      context: "."
+      dockerfile: "Worker.Dockerfile"
+    container_name: "worker"
+    depends_on:
+      - "rabbitmq"
+    env_file:
+      - "Worker.secrets.env"
+    environment:
+      RabbitMQ__Host: "rabbitmq"
+    image: "${DOCKER_REGISTRY}/mattms.tryrabbitmq.worker"
+version: "3"

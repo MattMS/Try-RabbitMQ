@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+	<PropertyGroup>
+		<!-- <OutputType>Exe</OutputType> -->
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="Worker.fs" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="../Messages/MattMS.TryRabbitMQ.Messages.fsproj" />
+	</ItemGroup>
+</Project>

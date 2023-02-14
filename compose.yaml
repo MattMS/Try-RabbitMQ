@@ -1,0 +1,8 @@
+services:
+  rabbitmq:
+    container_name: "rabbitmq"
+    # environment:
+    #   RABBITMQ_DEFAULT_PASS: "guest"
+    #   RABBITMQ_DEFAULT_USER: "guest"
+    image: "rabbitmq:3.11.9-management-alpine"
+version: "3"

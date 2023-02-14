@@ -78,6 +78,19 @@ You need a Docker Context that is connected to your Azure account:
 docker context create aci MY-AZURE-CONTEXT
 ```
 
+You now have enough information to generate the secrets that are needed for deployment.
+First make up a username and password for your RabbitMQ user:
+
+```
+$User = Get-Credential
+```
+
+Then use the registry details along with your new credential object to create all the files:
+
+```
+./New-Secrets.ps1 -AzureRegistry MY-REGISTRY -RabbitMQUser $User
+```
+
 ### Azure
 
 To be able to push images, you must be in your default context (rather than the Azure one you just created):

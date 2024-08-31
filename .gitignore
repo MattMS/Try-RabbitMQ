@@ -1,6 +1,7 @@
 .fable
 .fake
 .ionide
+__pycache__
 bin
 obj
 venv*

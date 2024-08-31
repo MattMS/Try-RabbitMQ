@@ -3,6 +3,7 @@
 .ionide
 bin
 obj
+venv*
 *.env
 *.html
 *.js
